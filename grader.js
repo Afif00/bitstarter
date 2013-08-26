@@ -34,7 +34,7 @@ var assertFileExists = function(url) {
           resp = response.toString();
         });
     if(resp =="") {
-        console.log("%s does not exist. Exiting.", instr);
+        console.log("%s does not exist. Exiting.", resp);
         process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
     }
     return resp;
