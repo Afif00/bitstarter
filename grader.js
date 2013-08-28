@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env nodeOAOAOAA
 /*
 Automatically grade files for the presence of specified HTML tags/attributes.
 Uses commander.js and cheerio. Teaches command line application development
@@ -41,7 +41,7 @@ var assertFileExists = function(url) {
 };
 
 var cheerioHtmlFile = function(htmlfile) {
-    return cheerio.load(fs.readFileSync(htmlfile));
+    return cheerio.load(htmlfile);
 };
 
 var loadChecks = function(checksfile) {
@@ -69,7 +69,7 @@ if(require.main == module) {
     program
 	.option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
  //       .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
-	.option('-u, --file <page_location>', 'location of page', clone(assertFileExists), HTMLFILE_DEFAULT)
+	.option('-u, --url <page_location>', 'location of page', clone(assertFileExists), HTMLFILE_DEFAULT)
 	.parse(process.argv);
     var checkJson = checkHtmlFile(program.file, program.checks);
     var outJson = JSON.stringify(checkJson, null, 4);
