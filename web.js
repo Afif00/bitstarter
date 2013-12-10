@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+app.use(express.static(__dirname + '/assets'));
 var fs = require('fs');
 
 app.use(express.logger());
